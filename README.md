@@ -3,8 +3,7 @@
 
 Hi all this is an updated and simple version of webscraping my previous version was using selinium that was working good but bit complicated process
 
-#-----------------------------------------------
-In this version u can fetch 
+#------------In this version u can fetch------------------
 
 ---->job title
 ---->location
