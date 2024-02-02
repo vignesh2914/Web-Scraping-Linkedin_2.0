@@ -3,14 +3,13 @@
 Kindly read the Note file below atlast
 
 # updates 1 
-Now the scraper fetch the data really cool  and fast. I have added a new feature to it, which is that you can now specify 
-filteration process on jobs whether its last 24 hr or past week, or month etc 
+At this point, the scraper retrieves the data quickly .we added some new features like you can choose the filtering process on jobs based on the last 24 hours, the previous week, the previous month, etc. 
 
 # updates 2
-Add on stuff like in this method scraping it hits error 429 which means the http request for that site  is blocked by server(too many request). to resolve that we added some condition like whenever the error hits it will be waiting for 60 seconds and again the data will be fetched  from web and stored in a csv file.
+Add on like this: when using this way of scraping, it encounters error 429, which indicates that the server has stopped the http request for that website (too many requests). In order to fix that, we implemented various conditions, such as waiting 60 seconds after an error occurs before retrieving the data from the web and saving it in a CSV file.
 
 # updates 3
-Saving as CSV file as been changed to automatically it will be saved into a new name  each time when we run our code. This is done by adding current date and time to filename so on
+Every time we execute our code, the saving as CSV file will now be done automatically and will have a new name. To accomplish this, update the filename with the current date and time.
 
 if ur using vs code add this extention edit csv for better view to data 
 
