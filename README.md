@@ -1,6 +1,21 @@
-# Latest updation On scraping 2-2-24
-
 Kindly read the Note file below atlast
+# Latest updates on 7-2-24
+
+# update 2.1 
+
+Now our program will be end at some point like it can fecth only 50 jobs or 
+as many under user wish it can be modified
+
+# update 2.2
+
+add on Filter csv file  is been added which will filter the company name hits more than ones it wil be skipped
+this is an additional update to the code because actual vision of our project to enter sales navigator
+
+Thats it about the updates 
+-----------------------------------------------------------------------------------------------------------------------
+Old updates for ur reference
+-----------------------------------------------------------------------------------------------------------------------
+# updation On scraping 2-2-24
 
 # updates 1.1
 At this point, the scraper retrieves the data quickly .we added some new features like you can choose the filtering process on jobs based on the last 24 hours, the previous week, the previous month, etc. 
@@ -14,27 +29,13 @@ Every time we execute our code, the saving as CSV file will now be done automati
 if ur using vs code add this extention edit csv for better view to data 
 
 If u want u can compare the demo files with main file and u can look the diffrence in the code 
-
------------------------------------------------------------------------------------------------------------------------
-
-# update 2.1 on 7-2-24
-
-Now our program will be end at some point like it can fecth only 50 jobs or 
-as many under user wish it can be modified
-
-# update 2.2
-
-add on Filter csv file  is been added which will filter the company name hits more than ones it wil be skipped
-this is an additional update to the code because actual vision of our project to enter sales navigator
-
-Thats it about the updates 
-
+------------------------------------------------------------------------------------------------------------------------
 Still in process.................
 
 HAPPY CODING HAVE FUN BY scraping !!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 Coming really soon ..........with exiting updates !!!!!!!!!!!!!!!!!!
-
+------------------------------------------------------------------------------------------------------------------------
 
 # NOTE - Simple and easy version
 
