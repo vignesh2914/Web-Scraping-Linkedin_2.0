@@ -1,37 +1,72 @@
-#last updated on 2-2-24 ----->14:56
+# Last Update on 7-02-24
 import csv
 import requests
 from bs4 import BeautifulSoup
 from datetime import datetime
 import time  
 
-# CSV file save process
+
+#csv file save process 
 def create_file_path(user_keywords):
     timestamp = datetime.now().strftime("%Y%m%d%H%M%S")
     file_path = f'linkedin-jobs-{user_keywords}-{timestamp}.csv'
     return file_path
 
+
+#Filter process compay name which its repeted
+def create_filtered_file_path(user_keywords):
+    timestamp = datetime.now().strftime("%Y%m%d%H%M%S")
+    file_path = f'filtered-linkedin-jobs-{user_keywords}-{timestamp}.csv'
+    return file_path
+
+#removing the company name which its been repeted more than ones 
+def remove_duplicates_and_save(user_keywords, timestamp):
+    original_file_path = f'linkedin-jobs-{user_keywords}-{timestamp}.csv'
+    existing_companies = set()
+    filtered_records = []
+
+
+    with open(original_file_path, 'r', encoding='utf-8') as file:
+        reader = csv.reader(file)
+        header = next(reader)
+        filtered_records.append(header)
+
+        for row in reader:
+            if row[1] not in existing_companies:
+                filtered_records.append(row)
+                existing_companies.add(row[1])
+
+    filtered_file_path = f'filtered-linkedin-jobs-{user_keywords}-{timestamp}.csv'
+    with open(filtered_file_path, 'w', encoding='utf-8', newline='') as filtered_file:
+        writer = csv.writer(filtered_file)
+        writer.writerows(filtered_records)
+
 def linkedin_scraper(webpage, keywords, file_path, page_number=0):
-    while True:
-        # Number of pages to scrape from the webpage
+    records_count = 0
+
+    while records_count < 50:
         next_page = f"{webpage}&keywords={keywords}&start={page_number * 25}"
-        print(next_page)
+
 
         try:
             response = requests.get(next_page)
             response.raise_for_status()
+
         except requests.exceptions.RequestException as e:
+           
             if response.status_code == 429:
                 print("Rate limit exceeded. Waiting for a longer while.")
-                time.sleep(60)  # Waiting time if hits error 429 it will wait for 60 seconds
+                time.sleep(60)
                 continue
+
             else:
                 print(f"Error in request: {e}")
                 return
 
+ 
         soup = BeautifulSoup(response.content, 'html.parser')
-
         jobs = soup.find_all('div', class_='base-card relative w-full hover:no-underline focus:no-underline base-card--link base-search-card base-search-card--link job-search-card')
+       
         if not jobs:
             print("No more jobs found.")
             break  
@@ -44,13 +79,18 @@ def linkedin_scraper(webpage, keywords, file_path, page_number=0):
 
             with open(file_path, 'a', encoding='utf-8', newline='') as file:
                 writer = csv.writer(file)
+                
+                if records_count == 0:
+                    writer.writerow(['Job Title', 'Company', 'Location', 'Link'])  
                 writer.writerow([job_title, job_company, job_location, job_link])
 
-        print(f'Data updated. Total records: {page_number * 50 + len(jobs)}')
+            records_count += 1
+            if records_count == 50:
+                break
 
+        print(f'Data updated. Total records: {records_count}')
         page_number += 1
-
-        #  sleep after every 50 records to avoid rate limiting
+        
         if page_number % 50 == 0:
             print("Taking a break after fetching 50 records. Sleeping for 60 seconds.")
             time.sleep(60)
@@ -67,11 +107,10 @@ job_filters = [
     'https://www.linkedin.com/jobs/search/?currentJobId=3812840127&f_TPR=r86400&keywords={}&location={}&origin=JOB_SEARCH_PAGE_JOB_FILTER&refresh=true'
 ]
 
-file_path = create_file_path(user_keywords)
-
-# Validation process for 1-4 number filter values
 if 1 <= user_filter <= 4:
+    timestamp = datetime.now().strftime("%Y%m%d%H%M%S")
+    file_path = create_file_path(user_keywords)
     linkedin_scraper(job_filters[user_filter].format(user_keywords, user_location), user_keywords, file_path)
+    remove_duplicates_and_save(user_keywords, timestamp)
 else:
     print("Invalid filter value. Please enter a value between 1 and 4.")
-
