@@ -1,4 +1,30 @@
-Kindly read the Note file below atlast
+Kindly read the Note file 
+
+# NOTE - Simple and easy version
+
+Hi all this is an updated and simple version of webscraping my previous version was using selinium that was working good but it was bit complicated process
+
+# ------------In this version u can fetch------------------
+
+---->job title
+---->location
+---->role
+---->link
+
+#------------Kindly follow my another repo 3.0 version----------------------
+
+In that major modification code is done as of for a begginer this project 2.0 is fine
+but to be like a professional u can go through my 3.0 version link below
+
+https://github.com/vignesh2914/Linkedin_Scraping_3.0
+updates will be day by day kindly follow that too !!!!!!
+
+#---------------------------------------------------------------------------
+Into an CSV file That will be saved in ur respective folder where do u done the code
+
+HAPPY CODING HAVE FUN BY scraping !!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
 # Latest updates on 7-2-24
 
 # update 2.1 
@@ -14,11 +40,7 @@ this is an additional update to the code because actual vision of our project to
 Thats it about the updates 
 -----------------------------------------------------------------------------------------------------------------------
 Old updates for ur reference
------------------------------------------------------------------------------------------------------------------------
-# updation On scraping 2-2-24
 
-# updates 1.1
-At this point, the scraper retrieves the data quickly .we added some new features like you can choose the filtering process on jobs based on the last 24 hours, the previous week, the previous month, etc. 
 
 # updates 1.2
 Add on like this: when using this way of scraping, it encounters error 429, which indicates that the server has stopped the http request for that website (too many requests). In order to fix that, we implemented various conditions, such as waiting 60 seconds after an error occurs before retrieving the data from the web and saving it in a CSV file.
@@ -36,18 +58,9 @@ HAPPY CODING HAVE FUN BY scraping !!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 Coming really soon ..........with exiting updates !!!!!!!!!!!!!!!!!!
 ------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------
+# updation On scraping 2-2-24
 
-# NOTE - Simple and easy version
+# updates 1.1
+At this point, the scraper retrieves the data quickly .we added some new features like you can choose the filtering process on jobs based on the last 24 hours, the previous week, the previous month, etc. 
 
-Hi all this is an updated and simple version of webscraping my previous version was using selinium that was working good but it was bit complicated process
-
-# ------------In this version u can fetch------------------
-
----->job title
----->location
----->role
----->link
-
-Into an CSV file That will be saved in ur respective folder where do u done the code
-
-HAPPY CODING HAVE FUN BY scraping !!!!!!!!!!!!!!!!!!!!!!!!!!!!
