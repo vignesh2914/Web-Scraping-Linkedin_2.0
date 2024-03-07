@@ -1,5 +1,11 @@
 Kindly read the Note file 
 
+# NOTE - UPDATES for my scraping follow 3.0 repo https://github.com/vignesh2914/Linkedin_Scraping_3.0
+
+# Note - This 2.0 version is completely fine for  a beginner
+
+#--------------Thank you folks-----------------------------------------------
+
 # NOTE - Simple and easy version
 
 Hi all this is an updated and simple version of webscraping my previous version was using selinium that was working good but it was bit complicated process
@@ -10,16 +16,6 @@ Hi all this is an updated and simple version of webscraping my previous version 
 ---->location
 ---->role
 ---->link
-
-#------------Kindly follow my another repo 3.0 version----------------------
-
-In that major modification code is done as of for a begginer this project 2.0 is fine
-but to be like a professional u can go through my 3.0 version link below
-
-https://github.com/vignesh2914/Linkedin_Scraping_3.0
-updates will be day by day kindly follow that too !!!!!!
-
-#--------------Thank you folks-----------------------------------------------
 
 
 Into an CSV file That will be saved in ur respective folder where do u done the code
