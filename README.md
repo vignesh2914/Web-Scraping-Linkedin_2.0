@@ -4,7 +4,13 @@ Kindly read the Note file
 
 # Note - This 2.0 version is completely fine for  a beginner
 
-But to be like professional 3.0 I might suggest 
+But to be like professional 3.0 I might suggest because in that repo i mentioned how to create a project setup
+---> Funtion
+---> try and except block
+---> logging
+---> custom exception
+---> API 
+MANY MORE things can be done in that repo 
 
 #--------------Thank you folks-----------------------------------------------
 
