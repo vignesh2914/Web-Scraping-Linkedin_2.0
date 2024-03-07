@@ -19,7 +19,9 @@ but to be like a professional u can go through my 3.0 version link below
 https://github.com/vignesh2914/Linkedin_Scraping_3.0
 updates will be day by day kindly follow that too !!!!!!
 
-#---------------------------------------------------------------------------
+#--------------Thank you folks-----------------------------------------------
+
+
 Into an CSV file That will be saved in ur respective folder where do u done the code
 
 HAPPY CODING HAVE FUN BY scraping !!!!!!!!!!!!!!!!!!!!!!!!!!!!
