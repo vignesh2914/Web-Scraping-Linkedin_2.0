@@ -19,10 +19,10 @@ def linkedin_scraper(webpage, keywords, page_number):
 
     jobs = soup.find_all('div', class_='base-card relative w-full hover:no-underline focus:no-underline base-card--link base-search-card base-search-card--link job-search-card')
     for job in jobs:
-        job_title = job.find('h3', class_='base-search-card__title').text.strip()
-        job_company = job.find('h4', class_='base-search-card__subtitle').text.strip()
-        job_location = job.find('span', class_='job-search-card__location').text.strip()  
-        job_link = job.find('a', class_='base-card__full-link')['href']
+        job_title = job.find(class_='').text.strip()
+        job_company = job.find(class_='').text.strip()
+        job_location = job.find(class_='').text.strip()  
+        job_link = job.find(class_='')
 
         with open(file_path, 'a', encoding='utf-8', newline='') as file:
             writer = csv.writer(file)
@@ -37,5 +37,5 @@ def linkedin_scraper(webpage, keywords, page_number):
 
 user_keywords = input("Enter the job keywords: ")
 
-dynamic_url = f'https://www.linkedin.com/jobs/search/?currentJobId=3808377479&distance=25&f_TPR=r86400&geoId=102713980&keywords={user_keywords}&origin=JOB_SEARCH_PAGE_JOB_FILTER&refresh=true'
+dynamic_url = f'{user_keyword},{location } your prefered linkedin url'
 linkedin_scraper(dynamic_url, user_keywords, page_number=0)
