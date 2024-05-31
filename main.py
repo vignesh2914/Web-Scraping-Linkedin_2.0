@@ -54,28 +54,19 @@ def linkedin_scraper(webpage, keywords, file_path, page_number=0):
 
         except requests.exceptions.RequestException as e:
            
-            if response.status_code == 429:
-                print("Rate limit exceeded. Waiting for a longer while.")
-                time.sleep(60)
-                continue
 
-            else:
-                print(f"Error in request: {e}")
-                return
-
- 
         soup = BeautifulSoup(response.content, 'html.parser')
-        jobs = soup.find_all('div', class_='base-card relative w-full hover:no-underline focus:no-underline base-card--link base-search-card base-search-card--link job-search-card')
+        jobs = soup.find_all( class_='')
        
         if not jobs:
             print("No more jobs found.")
             break  
 
         for job in jobs:
-            job_title = job.find('h3', class_='base-search-card__title').text.strip()
-            job_company = job.find('h4', class_='base-search-card__subtitle').text.strip()
-            job_location = job.find('span', class_='job-search-card__location').text.strip()
-            job_link = job.find('a', class_='base-card__full-link')['href']
+            job_title = job.find(class_='').text.strip()
+            job_company = job.find(class_='').text.strip()
+            job_location = job.find(class_='').text.strip()
+            job_link = job.find(class_='')
 
             with open(file_path, 'a', encoding='utf-8', newline='') as file:
                 writer = csv.writer(file)
@@ -101,10 +92,10 @@ user_filter = int(input("Enter the value (1-4): "))
 
 job_filters = [
     None,
-    'https://www.linkedin.com/jobs/search/?currentJobId=3810061572&keywords={}&location={}&origin=JOB_SEARCH_PAGE_LOCATION_HISTORY&refresh=true',
-    'https://www.linkedin.com/jobs/search/?currentJobId=3799271140&f_TPR=r2592000&keywords={}&location={}&origin=JOB_SEARCH_PAGE_JOB_FILTER&refresh=true',
-    'https://www.linkedin.com/jobs/search/?currentJobId=3812840127&f_TPR=r604800&keywords={}&location={}&origin=JOB_SEARCH_PAGE_JOB_FILTER&refresh=true',
-    'https://www.linkedin.com/jobs/search/?currentJobId=3812840127&f_TPR=r86400&keywords={}&location={}&origin=JOB_SEARCH_PAGE_JOB_FILTER&refresh=true'
+            1: 'Your url location ={} role = {} analyse it',
+            2: 'Your url location ={} role = {} analyse it',
+            3: 'Your url location ={} role = {} analyse it',
+            4: 'Your url location ={} role = {} analyse it'
 ]
 
 if 1 <= user_filter <= 4:
